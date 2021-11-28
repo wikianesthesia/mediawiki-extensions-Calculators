@@ -1,0 +1,124 @@
+@mobile:      ~"only screen and (max-width: 529px)";
+@tablet:      ~"only screen and (min-width: 530px) and (max-width: 949px)";
+@desktop:     ~"only screen and (min-width: 950px)";
+@font-size: 0.875rem;
+
+.form-control-sm, .custom-select-sm {
+    /* enlarge by 16/14 = 114.29% */
+    font-size: 16px;
+
+    /* scale down by 14/16 = 75% */
+    transform: scale(0.875);
+    transform-origin: left top;
+
+    /* remove extra white space */
+    margin-right: -10%;
+}
+
+.calculator, .calculator-calculation {
+    font-size: @font-size !important;
+}
+
+.calculator-calculation {
+    background: #f9fcff;
+    margin-bottom: 0.5rem;
+
+    .calculator-calculation-info {
+        flex-direction: column;
+    }
+
+    .collapsing {
+        -webkit-transition: none;
+        transition: none;
+        display: none;
+    }
+
+    .btn {
+        font-size: inherit !important;
+    }
+}
+
+.calculator-inputGroup {
+    flex-wrap: nowrap;
+    margin: 0;
+}
+
+.calculator-input-text {
+    @media @mobile {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+}
+
+.calculator-input-select {
+    @media @mobile {
+        padding-right: 1.5rem;
+        padding-left: 0.5rem;
+    }
+}
+
+.calculator-description-info {
+    border-bottom: 1px solid #dee2e6;
+    padding: 0.5rem 0rem;
+}
+
+@media (max-width: 767px) {
+    .calculator-hideLabelMobile {
+        display: block;
+        position: absolute;
+        clip: rect(1px,1px,1px,1px);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+        overflow: hidden
+    }
+}
+
+.calculator-SimpleCalculation {
+    width: 100%;
+    max-width: 600px;
+
+    .row {
+        width: 100%;
+    }
+
+    .calculator-calculation-title {
+        background: rgba(0, 0, 0, 0.03);
+        font-weight: 500;
+        padding: 0.2rem 0.4rem;
+    }
+
+    .calculator-calculation-value {
+        font-weight: 500;
+        padding: 0.2rem 0.4rem;
+        text-align: right;
+    }
+
+    .calculator-calculation-variables {
+        padding: 0.4rem 1rem !important;
+
+        .form-group {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    .calculator-calculation-infoButton {
+        float: right;
+    }
+
+    .calculator-calculation-info {
+        padding: 0.4rem 1rem !important;
+
+        ol, ul {
+            margin: 0 0 0 1rem;
+        }
+    }
+
+    .calculator-calculation-formula {
+        p {
+            margin-bottom: 0;
+        }
+    }
+}

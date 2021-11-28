@@ -1,0 +1,11 @@
+{
+  "@metadata": {
+    "authors": [
+      "Chris Rishel"
+    ]
+  },
+  "calculators": "Calculators",
+  "calculators-extensionname": "Calculators",
+  "calculators-desc": "Adds calculator gadget functionality to the wiki",
+  "calculators-parser-tag-missing-required-argument": "Could not parse $1 tag: Missing required argument '$2'"
+}

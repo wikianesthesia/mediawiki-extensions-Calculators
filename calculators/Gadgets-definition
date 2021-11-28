@@ -1,0 +1,31 @@
+=== Calculators ===
+Calculators must have gadgets defined in this file in order to be loaded. See [https://www.mediawiki.org/wiki/Extension:Gadgets the Gadgets extension] for usage details.
+
+==== Core gadgets ====
+This is the core gadget required by all calculators
+* calculator-core[ResourceLoader|dependencies=ext.calculators.math.js|hidden|targets=desktop,mobile|type=general]|calculator-core.js|calculator-core.css
+
+This is the search gadget
+* calculator-search[ResourceLoader|dependencies=ext.gadget.calculator-core|hidden|targets=desktop,mobile|type=general]|calculator-search.js|calculator-search.css
+
+==== Calculator gadgets ====
+See the [[WikiAnesthesia:Calculators guide|calculators guide]] for more information about how to use and contribute to calculators on WikiAnesthesia.
+
+Gadgets are loaded using the '''&lt;calculation id="''X''" /&gt;''' tag. The value for ''X'' must exactly match the declared gadget name (after ''calculator-'').
+
+Note: Gadgets are loaded by the calculator-core gadget and thus do not need to declare this as a dependency.
+
+===== Drugs =====
+* calculator-drugs-core[ResourceLoader|dependencies=ext.gadget.calculator-patients-weightCalculations|hidden|targets=desktop,mobile|type=general]|calculator-drugs-core.js
+* calculator-drugs-data[ResourceLoader|dependencies=ext.gadget.calculator-drugs-core|hidden|targets=desktop,mobile|type=general]|calculator-drugs-data.js
+* calculator-drugDosages[ResourceLoader|dependencies=ext.gadget.calculator-patients-patientInput,ext.gadget.calculator-drugs-data|hidden|targets=desktop,mobile|type=general]|calculator-drugDosages.js|calculator-drugDosages.css
+* calculator-drugDilution[ResourceLoader|dependencies=ext.gadget.calculator-drugs|hidden|targets=desktop,mobile|type=general]|calculator-drugDilution.js|calculator-drugDilution.css
+
+===== Equipment =====
+* calculator-equipmentSizing[ResourceLoader|dependencies=ext.gadget.calculator-patients-patientInput|hidden|targets=desktop,mobile|type=general]|calculator-equipmentSizing.js
+
+===== Patients =====
+* calculator-patients-core[ResourceLoader|dependencies=ext.gadget.calculator-core|hidden|targets=desktop,mobile|type=general]|calculator-patients-core.js
+* calculator-patients-patientInput[ResourceLoader|dependencies=ext.gadget.calculator-patients-core|hidden|targets=desktop,mobile|type=general]|calculator-patients-patientInput.js|calculator-patients-patientInput.css
+* calculator-patients-weightCalculations[ResourceLoader|dependencies=ext.gadget.calculator-patients-core|hidden|targets=desktop,mobile|type=general]|calculator-patients-weightCalculations.js|calculator-patients-weightCalculations.css
+* calculator-anatomyPhysiology[ResourceLoader|dependencies=ext.gadget.calculator-patients-patientInput,ext.gadget.calculator-patients-weightCalculations|hidden|targets=desktop,mobile|type=general]|calculator-anatomyPhysiology.js|calculator-anatomyPhysiology.css

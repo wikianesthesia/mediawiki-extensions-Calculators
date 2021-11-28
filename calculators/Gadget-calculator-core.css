@@ -1,0 +1,95 @@
+.form-control-sm,
+.custom-select-sm {
+    font-size: 16px;
+    transform: scale(0.875);
+    transform-origin: left top;
+    margin-right: -10%;
+}
+.calculator,
+.calculator-calculation {
+    font-size: 0.875rem !important;
+}
+.calculator-calculation {
+    background: #f9fcff;
+    margin-bottom: 0.5rem;
+}
+.calculator-calculation .calculator-calculation-info {
+    flex-direction: column;
+}
+.calculator-calculation .collapsing {
+    -webkit-transition: none;
+    transition: none;
+    display: none;
+}
+.calculator-calculation .btn {
+    font-size: inherit !important;
+}
+.calculator-inputGroup {
+    flex-wrap: nowrap;
+    margin: 0;
+}
+@media only screen and (max-width: 529px) {
+    .calculator-input-text {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+}
+@media only screen and (max-width: 529px) {
+    .calculator-input-select {
+        padding-right: 1.5rem;
+        padding-left: 0.5rem;
+    }
+}
+.calculator-description-info {
+    border-bottom: 1px solid #dee2e6;
+    padding: 0.5rem 0rem;
+}
+@media (max-width: 767px) {
+    .calculator-hideLabelMobile {
+        display: block;
+        position: absolute;
+        clip: rect(1px,1px,1px,1px);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+}
+.calculator-SimpleCalculation {
+    width: 100%;
+    max-width: 600px;
+}
+.calculator-SimpleCalculation .row {
+    width: 100%;
+}
+.calculator-SimpleCalculation .calculator-calculation-title {
+    background: rgba(0,0,0,0.03);
+    font-weight: 500;
+    padding: 0.2rem 0.4rem;
+}
+.calculator-SimpleCalculation .calculator-calculation-value {
+    font-weight: 500;
+    padding: 0.2rem 0.4rem;
+    text-align: right;
+}
+.calculator-SimpleCalculation .calculator-calculation-variables {
+    padding: 0.4rem 1rem !important;
+}
+.calculator-SimpleCalculation .calculator-calculation-variables .form-group {
+    margin-bottom: 0.5rem;
+}
+.calculator-SimpleCalculation .calculator-calculation-infoButton {
+    float: right;
+}
+.calculator-SimpleCalculation .calculator-calculation-info {
+    padding: 0.4rem 1rem !important;
+}
+.calculator-SimpleCalculation .calculator-calculation-info ol,
+.calculator-SimpleCalculation .calculator-calculation-info ul {
+    margin: 0 0 0 1rem;
+}
+.calculator-SimpleCalculation .calculator-calculation-formula p {
+    margin-bottom: 0;
+}

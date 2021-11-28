@@ -1,0 +1,30 @@
+@desktop:     ~"only screen and (min-width: 950px)";
+
+#calculator-search {
+  border-bottom: 1px solid #dee2e6;
+  padding: 0.25rem 0rem;
+
+  @media @desktop {
+    position: sticky;
+    top: 208px;
+    background: rgba(255,255,255,1);
+    z-index: 900;
+  }
+
+  form {
+    flex-wrap: nowrap;
+  }
+
+  h4 {
+    padding-top: 0;
+  }
+}
+
+.calculator-search-label {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+#calculator-search-input, #calculator-category-input {
+  width: 114%;
+}

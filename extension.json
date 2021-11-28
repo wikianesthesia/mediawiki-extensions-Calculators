@@ -1,0 +1,45 @@
+{
+  "name": "Calculators",
+  "namemsg": "calculators-extensionname",
+  "version": "0.1.0",
+  "author": [
+    "Chris Rishel"
+  ],
+  "license-name": "GPL-3.0-or-later",
+  "url": "https://www.mediawiki.org/wiki/Extension:Calculators",
+  "descriptionmsg": "calculators-desc",
+  "type": "other",
+  "requires": {
+    "MediaWiki": ">= 1.35.0",
+    "extensions": {
+      "Bootstrap": "*",
+      "Gadgets": "*"
+    }
+  },
+  "callback": "Calculators\\Calculators::init",
+  "AutoloadNamespaces": {
+    "Calculators\\": "src/"
+  },
+  "AvailableRights": [],
+  "Hooks": {
+    "ParserFirstCallInit": "Calculators\\Hook\\ParserFirstCallInit::callback"
+  },
+  "MessagesDirs": {
+    "Calculators": [
+      "i18n"
+    ]
+  },
+  "ResourceModules": {
+    "ext.calculators.math.js": {
+      "scripts": [
+        "math.js/math.js"
+      ]
+    }
+  },
+  "ResourceFileModulePaths": {
+    "localBasePath": "modules",
+    "remoteExtPath": "Calculators/modules"
+  },
+  "SpecialPages": {},
+  "manifest_version": 2
+}
