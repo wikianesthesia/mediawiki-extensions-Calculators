@@ -1,0 +1,37 @@
+<calculatormodule id="anatomyPhysiology" />
+<calculatordescription>The '''anatomy and physiology calculator''' calculates based upon patient demographic information provided in the fields above. Some calculations require additional patient data, for which fields are provided within the calculation. As with all clinical decision support tools, ultimately use clinical judgement when considering these results.
+* Some calculations may have important additional information which can be shown using the question mark icon
+===== Contributing to this calculator =====
+Use the [[{{TALKPAGENAME}}|discussion page]] to leave feedback about the calculator. To contribute more substantially, see the [[WikiAnesthesia:Calculators guide|calculators guide]] to learn about the process to get developer access.
+The anatomy and physiology calculator is powered by the [[MediaWiki:Gadget-calculator-patients-core.js|patients]], [[MediaWiki:Gadget-calculator-patients-weightCalculations.js|weightCalculations]], and [[MediaWiki:Gadget-calculator-anatomyPhysiology.js|anatomyPhysiology]] modules.
+</calculatordescription>
+<calculatorsearch search-placeholder="Search &quot;Fick&quot; or &quot;Cardiac output&quot; or &quot;Pulmonary&quot;" />
+<calculationcategory id="patientStatistics" title="Patient statistics">
+  <calculation id="bmi">Body mass index (BMI)</calculation>
+  <calculation id="bsa">Body surface area (BSA)</calculation>
+  <calculation id="ibw">Ideal body weight (IBW)</calculation>
+  <calculation id="lbw">Lean body weight (LBW)</calculation>
+</calculationcategory>
+<calculationcategory id="cardiovascular" title="Cardiovascular">
+  <calculation id="vO2">Rate of oxygen consumption (VO<sub>2</sub>)</calculation>
+  <calculation id="cardiacOutputFick">Cardiac output (Fick)</calculation>
+  <calculation id="cardiacIndex">Cardiac index (CI)</calculation>
+  <calculation id="strokeVolume">Stroke volume (SV)</calculation>
+</calculationcategory>
+<calculationcategory id="neuro" title="Neuro">
+  <calculation id="brainMass">Brain mass</calculation>
+  <calculation id="cerebralBloodVolume">Cerebral blood volume</calculation>
+  <calculation id="cerebralMetabolicRateO2">Cerebral metabolic rate (O2)</calculation>
+  <calculation id="cerebralMetabolicRateGlucose">Cerebral metabolic rate (Glucose)</calculation>
+  <calculation id="cerebralBloodFlow">Cerebral blood flow</calculation>
+</calculationcategory>
+<calculationcategory id="pulmonary" title="Pulmonary">
+  <calculation id="paO2Predicted">PaO<sub>2</sub> (predicted)</calculation>
+  <calculation id="aaGradientO2">A-a O<sub>2</sub> gradient</calculation>
+  <calculation id="aaGradientO2Predicted">A-a O<sub>2</sub> gradient (predicted)</calculation>
+  <calculation id="weightBasedTidalVolume">Weight-based tidal volume</calculation>
+</calculationcategory>
+
+__NOTABS__
+__NOPRACTICEGROUPS__
+__NOPERSONALNOTES__

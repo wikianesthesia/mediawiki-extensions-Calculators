@@ -1,0 +1,134 @@
+<calculatormodule id="drugDosages" />
+<calculatordescription>The '''drug dosage calculator''' provides specific dose information based upon patient statistics provided in the fields above and the indications and routes selected for the drug.
+* '''IMPORTANT''': This calculator is designed to be a quick reference, and many important considerations and contraindications are not listed here. As with all clinical decision support tools, ultimately use clinical judgement when selecting the dose to be administered for a specific patient.
+* If the dose is weight-based and weight is provided, the mass and volume of drug will also be calculated
+** Doses are calculated using total body weight unless otherwise specified
+** For volume, verify the correct preparation of the drug is selected
+* If the drug has different dosing based upon age (e.g. pediatric, elderly) and age is provided, an adjusted dose will be provided if the data is available
+* Some doses may have important additional information which will be shown as a link below the dose
+
+===== Contributing to this calculator =====
+Use the [[{{TALKPAGENAME}}|discussion page]] to leave feedback about the calculator. To contribute more substantially, see the [[WikiAnesthesia:Calculators guide|calculators guide]] to learn about the process to get developer access.
+The drug dosage calculator is powered by the [[MediaWiki:Gadget-calculator-patients-core.js|patients]], [[MediaWiki:Gadget-calculator-patients-weightCalculations.js|weightCalculations]], [[MediaWiki:Gadget-calculator-drugs-core.js|drugs]], and [[MediaWiki:Gadget-calculator-drugDosages.js|drugDosages]] modules. The dosage data is defined in the [[MediaWiki:Gadget-calculator-drugs-data.js|drugs data]] module.
+</calculatordescription>
+<calculatorsearch title="Search drugs" search-placeholder="Search &quot;Atropine&quot; or &quot;Precedex&quot; or &quot;Hypotension&quot; or &quot;PONV&quot;" />
+<calculationcategory id="sedativeHypnotics" title="Sedatives and hypnotics">
+  <calculation id="drugDosages-dexmedetomidine">Dexmedetomidine</calculation>
+  <calculation id="drugDosages-etomidate">Etomidate</calculation>
+  <calculation id="drugDosages-flumazenil">Flumazenil</calculation>
+  <calculation id="drugDosages-ketamine">Ketamine</calculation>
+  <calculation id="drugDosages-methohexital">Methohexital</calculation>
+  <calculation id="drugDosages-midazolam">Midazolam</calculation>
+  <calculation id="drugDosages-propofol">Propofol</calculation>
+  <calculation id="drugDosages-remimazolam">Remimazolam</calculation>
+  <calculation id="drugDosages-thiopental">Thiopental</calculation>
+</calculationcategory>
+<calculationcategory id="opioids" title="Opioids">
+  <calculation id="drugDosages-alfentanil">Alfentanil</calculation>
+  <calculation id="drugDosages-fentanyl">Fentanyl</calculation>
+  <calculation id="drugDosages-hydromorphone">Hydromorphone</calculation>
+  <calculation id="drugDosages-meperidine">Meperidine</calculation>
+  <calculation id="drugDosages-methadone">Methadone</calculation>
+  <calculation id="drugDosages-morphine">Morphine</calculation>
+  <calculation id="drugDosages-naloxone">Naloxone</calculation>
+  <calculation id="drugDosages-oxycodone">Oxycodone</calculation>
+  <calculation id="drugDosages-remifentanil">Remifentanil</calculation>
+  <calculation id="drugDosages-sufentanil">Sufentanil</calculation>
+</calculationcategory>
+<calculationcategory id="neuromuscularBlockade" title="Neuromuscular blockade">
+  <calculation id="drugDosages-atracurium">Atracurium</calculation>
+  <calculation id="drugDosages-cisatracurium">Cisatracurium</calculation>
+  <calculation id="drugDosages-neostigmine">Neostigmine</calculation>
+  <calculation id="drugDosages-pancuronium">Pancuronium</calculation>
+  <calculation id="drugDosages-rocuronium">Rocuronium</calculation>
+  <calculation id="drugDosages-vecuronium">Vecuronium</calculation>
+  <calculation id="drugDosages-succinylcholine">Succinylcholine</calculation>
+  <calculation id="drugDosages-sugammadex">Sugammadex</calculation>
+</calculationcategory>
+<calculationcategory id="cardiovascularAgonists" title="Cardiovascular agonists">
+  <calculation id="drugDosages-atropine">Atropine</calculation>
+  <calculation id="drugDosages-dobutamine">Dobutamine</calculation>
+  <calculation id="drugDosages-dopamine">Dopamine</calculation>
+  <calculation id="drugDosages-ephedrine">Ephedrine</calculation>
+  <calculation id="drugDosages-epinephrine">Epinephrine</calculation>
+  <calculation id="drugDosages-glycopyrrolate">Glycopyrrolate</calculation>
+  <calculation id="drugDosages-milrinone">Milrinone</calculation>
+  <calculation id="drugDosages-norepinephrine">Norepinephrine</calculation>
+  <calculation id="drugDosages-phenylephrine">Phenylephrine</calculation>
+  <calculation id="drugDosages-vasopressin">Vasopressin</calculation>
+</calculationcategory>
+<calculationcategory id="cardiovascularAntagonists" title="Cardiovascular antagonists">
+  <calculation id="drugDosages-adenosine">Adenosine</calculation>
+  <calculation id="drugDosages-clevidipine">Clevidipine</calculation>
+  <calculation id="drugDosages-esmolol">Esmolol</calculation>
+  <calculation id="drugDosages-labetalol">Labetalol</calculation>
+  <calculation id="drugDosages-metoprolol">Metoprolol</calculation>
+  <calculation id="drugDosages-nitroglycerin">Nitroglycerin</calculation>
+  <calculation id="drugDosages-nitroprusside">Nitroprusside</calculation>
+</calculationcategory>
+<calculationcategory id="ponv" title="Postoperative nausea and vomiting">
+  <calculation id="drugDosages-aprepitant">Aprepitant (Emend)</calculation>
+  <calculation id="drugDosages-dexamethasone">Dexamethasone (Decadron)</calculation>
+  <calculation id="drugDosages-fosaprepitant">Fosaprepitant (Emend)</calculation>
+  <calculation id="drugDosages-granisetron">Granisetron</calculation>
+  <calculation id="drugDosages-metoclopramide">Metoclopramide (Reglan)</calculation>
+  <calculation id="drugDosages-ondansetron">Ondansetron (Zofran)</calculation>
+  <calculation id="drugDosages-palonosetron">Palonosetron</calculation>
+  <calculation id="drugDosages-prochlorperazine">Prochlorperazine (Compazine)</calculation>
+  <calculation id="drugDosages-promethazine">Promethazine (Phenergan)</calculation>
+  <calculation id="drugDosages-scopolamine">Scopolamine</calculation>
+</calculationcategory>
+<calculationcategory id="nonOpioidAnalgesics" title="Non-opioid analgesics">
+  <calculation id="drugDosages-acetaminophen">Acetaminophen</calculation>
+  <calculation id="drugDosages-ketorolac">Ketorolac</calculation>
+  <calculation id="drugDosages-lidocaine">Lidocaine</calculation>
+</calculationcategory>
+<calculationcategory id="obstetricAnesthesia" title="Obstetric anesthesia">
+  <calculation id="drugDosages-carboprost">Carboprost</calculation>
+  <calculation id="drugDosages-methylergonovine">Methylergonovine</calculation>
+  <calculation id="drugDosages-misoprostol">Misoprostol</calculation>
+  <calculation id="drugDosages-terbutaline">Terbutaline</calculation>
+</calculationcategory>
+<calculationcategory id="electrolytes" title="Electrolytes">
+  <calculation id="drugDosages-calciumChloride">Calcium chloride</calculation>
+  <calculation id="drugDosages-calciumGluconate">Calcium gluconate</calculation>
+  <calculation id="drugDosages-magnesiumSulfate">Magnesium sulfate</calculation>
+  <calculation id="drugDosages-sodiumBicarbonate">Sodium bicarbonate</calculation>
+</calculationcategory>
+<calculationcategory id="diuretics" title="Diuretics">
+  <calculation id="drugDosages-mannitol">Mannitol</calculation>
+</calculationcategory>
+<calculationcategory id="antibiotics" title="Antibiotics">
+  <calculation id="drugDosages-ampicillin">Ampicillin</calculation>
+  <calculation id="drugDosages-aztreonam">Aztreonam</calculation>
+  <calculation id="drugDosages-cefazolin">Cefazolin (Ancef, Kefzol)</calculation>
+  <calculation id="drugDosages-cefotaxime">Cefotaxime</calculation>
+  <calculation id="drugDosages-cefotetan">Cefotetan</calculation>
+  <calculation id="drugDosages-cefoxitin">Cefoxitin</calculation>
+  <calculation id="drugDosages-ceftriaxone">Ceftriaxone</calculation>
+  <calculation id="drugDosages-cefuroxime">Cefuroxime</calculation>
+  <calculation id="drugDosages-ciprofloxacin">Ciprofloxacin</calculation>
+  <calculation id="drugDosages-clindamycin">Clindamycin</calculation>
+  <calculation id="drugDosages-ertapenem">Ertapenem</calculation>
+  <calculation id="drugDosages-fluconazole">Fluconazole</calculation>
+  <calculation id="drugDosages-gentamicin">Gentamicin</calculation>
+  <calculation id="drugDosages-levofloxacin">Levofloxacin (Levaquin)</calculation>
+  <calculation id="drugDosages-metronidazole">Metronidazole (Flagyl)</calculation>
+  <calculation id="drugDosages-moxifloxacin">Moxifloxacin</calculation>
+  <calculation id="drugDosages-piperacillinTazobactam">Piperacillin-tazobactam (Zosyn)</calculation>
+  <calculation id="drugDosages-vancomycin">Vancomycin</calculation>
+</calculationcategory>
+<calculationcategory id="malignantHyperthermia" title="Malignant hyperthermia">
+  <calculation id="drugDosages-dantrolene">Dantrolene</calculation>
+</calculationcategory>
+<calculationcategory id="other" title="Other">
+  <calculation id="drugDosages-diphenhydramine">Diphenhydramine (Benadryl)</calculation>
+  <calculation id="drugDosages-eptifibatide">Eptifibatide</calculation>
+  <calculation id="drugDosages-hydrocortisone">Hydrocortisone</calculation>
+  <calculation id="drugDosages-intralipid">Intralipid</calculation>
+  <calculation id="drugDosages-sodiumCitrateCitricAcid">Sodium citrate-citric acid (Bicitra)</calculation>
+</calculationcategory>
+
+__NOTABS__
+__NOPRACTICEGROUPS__
+__NOPERSONALNOTES__

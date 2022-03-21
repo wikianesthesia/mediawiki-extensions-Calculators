@@ -1,0 +1,19 @@
+<calculatormodule id="fluidManagement" />
+<calculatordescription>The '''fluid management calculator''' calculates based upon patient demographic information provided in the fields above. Some calculations require additional patient data, for which fields are provided within the calculation. As with all clinical decision support tools, ultimately use clinical judgement when considering these results.
+* Some calculations may have important additional information which can be shown using the question mark icon
+===== Contributing to this calculator =====
+Use the [[{{TALKPAGENAME}}|discussion page]] to leave feedback about the calculator. To contribute more substantially, see the [[WikiAnesthesia:Calculators guide|calculators guide]] to learn about the process to get developer access.
+The fluid management calculator is powered by the [[MediaWiki:Gadget-calculator-patients-core.js|patients]], [[MediaWiki:Gadget-calculator-patients-weightCalculations.js|weightCalculations]], and [[MediaWiki:Gadget-calculator-fluidManagement.js|fluidManagement]] modules.
+</calculatordescription>
+<calculatorsearch search-placeholder="Search &quot;ABL&quot; or &quot;Allowable blood loss&quot; or &quot;Min UOP&quot;" />
+<calculationcategory id="fluidManagement" title="Fluid management">
+  <calculation id="ebv">Estimated blood volume (EBV)</calculation>
+  <calculation id="fluidMaintenanceRate">Fluid maintenance rate</calculation>
+  <calculation id="intraopFluids">Intraoperative fluid dosing</calculation>
+  <calculation id="maxAbl">Maximum allowable blood loss</calculation>
+  <calculation id="minUop">Minimum urine output</calculation>
+</calculationcategory>
+
+__NOTABS__
+__NOPRACTICEGROUPS__
+__NOPERSONALNOTES__

@@ -15,6 +15,9 @@ Gadgets are loaded using the '''&lt;calculation id="''X''" /&gt;''' tag. The val
 
 Note: Gadgets are loaded by the calculator-core gadget and thus do not need to declare this as a dependency.
 
+===== Anatomy and physiology =====
+* calculator-anatomyPhysiology[ResourceLoader|dependencies=ext.gadget.calculator-patients-patientInput,ext.gadget.calculator-patients-weightCalculations|hidden|targets=desktop,mobile|type=general]|calculator-anatomyPhysiology.js
+
 ===== Drugs =====
 * calculator-drugs-core[ResourceLoader|dependencies=ext.gadget.calculator-patients-weightCalculations|hidden|targets=desktop,mobile|type=general]|calculator-drugs-core.js
 * calculator-drugs-data[ResourceLoader|dependencies=ext.gadget.calculator-drugs-core|hidden|targets=desktop,mobile|type=general]|calculator-drugs-data.js
@@ -24,8 +27,10 @@ Note: Gadgets are loaded by the calculator-core gadget and thus do not need to d
 ===== Equipment =====
 * calculator-equipmentSizing[ResourceLoader|dependencies=ext.gadget.calculator-patients-patientInput|hidden|targets=desktop,mobile|type=general]|calculator-equipmentSizing.js
 
+===== Fluid management =====
+* calculator-fluidManagement[ResourceLoader|dependencies=ext.gadget.calculator-patients-patientInput|hidden|targets=desktop,mobile|type=general]|calculator-fluidManagement.js
+
 ===== Patients =====
 * calculator-patients-core[ResourceLoader|dependencies=ext.gadget.calculator-core|hidden|targets=desktop,mobile|type=general]|calculator-patients-core.js
 * calculator-patients-patientInput[ResourceLoader|dependencies=ext.gadget.calculator-patients-core|hidden|targets=desktop,mobile|type=general]|calculator-patients-patientInput.js|calculator-patients-patientInput.css
-* calculator-patients-weightCalculations[ResourceLoader|dependencies=ext.gadget.calculator-patients-core|hidden|targets=desktop,mobile|type=general]|calculator-patients-weightCalculations.js|calculator-patients-weightCalculations.css
-* calculator-anatomyPhysiology[ResourceLoader|dependencies=ext.gadget.calculator-patients-patientInput,ext.gadget.calculator-patients-weightCalculations|hidden|targets=desktop,mobile|type=general]|calculator-anatomyPhysiology.js|calculator-anatomyPhysiology.css
+* calculator-patients-weightCalculations[ResourceLoader|dependencies=ext.gadget.calculator-patients-core|hidden|targets=desktop,mobile|type=general]|calculator-patients-weightCalculations.js
