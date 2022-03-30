@@ -12,6 +12,7 @@ class ParserFirstCallInit {
         $parser->setHook( 'calculationcategory', 'Calculators\\Parser\\CalculationCategory::render' );
         $parser->setHook( 'calculatordescription', 'Calculators\\Parser\\CalculatorDescription::render' );
         $parser->setHook( 'calculatormodule', 'Calculators\\Parser\\CalculatorModule::render' );
+        $parser->setHook( 'calculatoroptions', 'Calculators\\Parser\\CalculatorOptions::render' );
         $parser->setHook( 'calculatorsearch', 'Calculators\\Parser\\CalculatorSearch::render' );
     }
 }

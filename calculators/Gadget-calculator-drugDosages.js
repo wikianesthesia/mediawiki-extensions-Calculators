@@ -336,7 +336,7 @@
             } else {
                 var dosage = calculation.drug.dosages[ calculation.activeDosageId ];
 
-                if( dosage.population && dosage.population.id !== mw.calculators.getConstantValue( 'defaultDrugPopulation' ) ) {
+                if( dosage.population && dosage.population.id !== mw.calculators.getOptionValue( 'defaultDrugPopulation' ) ) {
                     var $dosePopulation = $( '<div>', {
                         class: calculation.getElementClasses( 'dose-info' )
                     } );
@@ -566,6 +566,16 @@
 
             if( !mw.calculators.isMobile() ) {
                 optionsRowClass += ' mb-2';
+            }
+
+            if( mw.calculators.getOptionValue( 'patientinputinline' ) ) {
+                // If patient input should be inline, add patient input group
+                $options.append( mw.calculators.createInputGroup( [
+                    'weight',
+                    'height',
+                    'age',
+                    'gender'
+                ], true, 4 ) );
             }
 
             var optionLabelClass = mw.calculators.isMobile() ? 'col-4' : 'col-3';
@@ -1001,5 +1011,5 @@
         }
     };
 
-    mw.calculators.initializeDrugDosages();
+    mw.hook( 'calculators.initialized' ).add( mw.calculators.initializeDrugDosages );
 }() );

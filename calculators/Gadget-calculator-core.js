@@ -28,8 +28,8 @@
 
     mw.calculators = {
         calculations: {},
-        constants: {},
         objectClasses: {},
+        options: {},
         units: {},
         unitsBases: {},
         variables: {},
@@ -48,20 +48,11 @@
                 mw.calculators.calculations[ calculationId ].update();
             }
         },
-        addConstant: function( constantId, value ) {
-            if( mw.calculators.constants.hasOwnProperty( constantId ) ) {
-                throw new Error( 'Could not add constant: constant "' + constantId + '" already defined' );
-            }
-
-            mw.calculators.constants[ constantId ] = value;
-
-            return true;
-        },
         addUnitsBases: function( unitsBaseData ) {
             var unitsBases = mw.calculators.createCalculatorObjects( 'UnitsBase', unitsBaseData );
 
             for( var unitsBaseId in unitsBases ) {
-                mw.calculators.unitsBases[ unitsBaseId ] = unitsBases[ unitsBaseId ];
+                mw.calculators.unitsBases[ unitsBaseId.toLowerCase() ] = unitsBases[ unitsBaseId ];
             }
         },
         addUnits: function( unitsData ) {
@@ -129,18 +120,22 @@
 
             return objects;
         },
-        createInputGroup: function( variableIds, global ) {
+        createInputGroup: function( variableIds, global, maxInputsPerRow ) {
             var $form = $( '<form>', {
                 novalidate: true
             } );
 
-            var $formRow = $( '<div>', {
-                class: 'form-row calculator-inputGroup'
-            } );
+            var $formRow;
 
             var inputOptions = {
                 global: !!global
             };
+
+            maxInputsPerRow = maxInputsPerRow ?
+                maxInputsPerRow :
+                mw.calculators.getOptionValue( 'inputgroupmaxinputsperrow' );
+
+            var inputCount = 0;
 
             for( var iVariableId in variableIds ) {
                 var variableId = variableIds[ iVariableId ];
@@ -149,7 +144,19 @@
                     throw new Error( 'Invalid variable name "' + variableId + '"' );
                 }
 
+                if( inputCount % maxInputsPerRow === 0 ) {
+                    if( $formRow ) {
+                        $form.append( $formRow );
+                    }
+
+                    $formRow = $( '<div>', {
+                        class: 'form-row calculator-inputGroup'
+                    } );
+                }
+
                 $formRow.append( mw.calculators.variables[ variableId ].createInput( inputOptions ) );
+
+                inputCount++;
             }
 
             return $form.append( $formRow );
@@ -173,9 +180,9 @@
                 return null;
             }
         },
-        getConstantValue: function( constantId ) {
-            return mw.calculators.constants.hasOwnProperty( constantId ) ?
-                mw.calculators.constants[ constantId ] :
+        getOptionValue: function( optionId ) {
+            return mw.calculators.options.hasOwnProperty( optionId ) ?
+                mw.calculators.options[ optionId ] :
                 undefined;
         },
         getUnitsByBase: function( value ) {
@@ -401,6 +408,18 @@
 
                 descriptionCount++;
             } );
+
+            // Set options
+            mw.calculators.setDefaultOptions();
+
+            var $optionsElement = $( '.calculator-options' );
+            if( $optionsElement.length ) {
+                $.each( $optionsElement.data(), function( optionId, value ) {
+                    mw.calculators.setOptionValue( optionId, value );
+                } );
+            }
+
+            mw.hook( 'calculators.initialized' ).fire();
         },
         isMobile: function() {
             return window.matchMedia( 'only screen and (max-width: 760px)' ).matches;
@@ -445,6 +464,14 @@
             mw.cookie.set( mw.calculators.getCookieKey( variableId ), value, {
                 expires: COOKIE_EXPIRATION
             } );
+        },
+        setDefaultOptions: function() {
+            mw.calculators.setOptionValue( 'inputgroupmaxinputsperrow', 3 );
+        },
+        setOptionValue: function( optionId, value ) {
+            mw.calculators.options[ optionId ] = value;
+
+            return true;
         },
         setValue: function( variableId, value ) {
             if( !mw.calculators.variables.hasOwnProperty( variableId ) ) {

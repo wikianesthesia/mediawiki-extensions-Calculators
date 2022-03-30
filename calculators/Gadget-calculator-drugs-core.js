@@ -2,9 +2,9 @@
  * @author Chris Rishel
  */
 ( function() {
-    mw.calculators.addConstant( 'defaultDrugColor', 'default' );
-    mw.calculators.addConstant( 'defaultDrugPopulation', 'general' );
-    mw.calculators.addConstant( 'defaultDrugRoute', 'iv' );
+    mw.calculators.setOptionValue( 'defaultDrugColor', 'default' );
+    mw.calculators.setOptionValue( 'defaultDrugPopulation', 'general' );
+    mw.calculators.setOptionValue( 'defaultDrugRoute', 'iv' );
 
     mw.calculators.isValueDependent = function( value, variableId ) {
         // This may need generalized to support other variables in the future
@@ -124,7 +124,7 @@
 
         mw.calculators.objectClasses.CalculatorObject.call( this, properties, propertyValues );
 
-        this.parentColor = this.parentColor || this.id === mw.calculators.getConstantValue( 'defaultDrugColor' ) ? this.parentColor : mw.calculators.getConstantValue( 'defaultDrugColor' );
+        this.parentColor = this.parentColor || this.id === mw.calculators.getOptionValue( 'defaultDrugColor' ) ? this.parentColor : mw.calculators.getOptionValue( 'defaultDrugColor' );
     };
 
     mw.calculators.objectClasses.DrugColor.prototype = Object.create( mw.calculators.objectClasses.CalculatorObject.prototype );
@@ -441,7 +441,7 @@
         mw.calculators.objectClasses.CalculatorObject.call( this, this.getProperties(), propertyValues );
 
         if( !this.color ) {
-            this.color = mw.calculators.getConstantValue( 'defaultDrugColor' );
+            this.color = mw.calculators.getOptionValue( 'defaultDrugColor' );
         }
 
         var color = mw.calculators.getDrugColor( this.color );
@@ -650,7 +650,7 @@
 
         this.indication = drugIndication;
 
-        this.population = this.population ? this.population : mw.calculators.getConstantValue( 'defaultDrugPopulation' );
+        this.population = this.population ? this.population : mw.calculators.getOptionValue( 'defaultDrugPopulation' );
 
         var drugPopulation = mw.calculators.getDrugPopulation( this.population );
 
@@ -662,7 +662,7 @@
 
         this.references = this.references ? mw.calculators.prepareReferences( this.references ) : [];
 
-        this.routes = this.routes ? this.routes : [ mw.calculators.getConstantValue( 'defaultDrugRoute' ) ];
+        this.routes = this.routes ? this.routes : [ mw.calculators.getOptionValue( 'defaultDrugRoute' ) ];
 
         if( !Array.isArray( this.routes ) ) {
             this.routes = [ this.routes ];

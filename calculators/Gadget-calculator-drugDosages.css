@@ -26,14 +26,12 @@
     font-weight: 500;
 }
 @media only screen and (max-width: 529px) {
-    .calculator-DrugDosageCalculation .calculator-calculation-dosage,
-    .calculator-DrugDosageCalculation .calculator-calculation-info {
+    .calculator-DrugDosageCalculation .calculator-calculation-dosage, .calculator-DrugDosageCalculation .calculator-calculation-info {
         padding: 0.2rem 0.5rem;
     }
 }
 @media only screen and (min-width: 530px) {
-    .calculator-DrugDosageCalculation .calculator-calculation-dosage,
-    .calculator-DrugDosageCalculation .calculator-calculation-info {
+    .calculator-DrugDosageCalculation .calculator-calculation-dosage, .calculator-DrugDosageCalculation .calculator-calculation-info {
         padding: 1rem 1.5rem;
     }
 }
@@ -49,8 +47,7 @@
 .calculator-DrugDosageCalculation .calculator-calculation-dose-info-population {
     font-style: italic;
 }
-.calculator-DrugDosageCalculation .calculator-calculation-dose-data ul,
-.calculator-DrugDosageCalculation .calculator-calculation-info ul {
+.calculator-DrugDosageCalculation .calculator-calculation-dose-data ul, .calculator-DrugDosageCalculation .calculator-calculation-info ul {
     margin: 0 0 0 1rem;
 }
 .calculator-DrugDosageCalculation .calculator-calculation-options {
@@ -65,4 +62,21 @@
     .calculator-DrugDosageCalculation .calculator-calculation-infoButton {
         padding-top: 1rem;
     }
+}
+.calculation-infobox .calculator-DrugDosageCalculation .calculator-calculation {
+    margin: 0;
+}
+.calculation-infobox .calculator-DrugDosageCalculation .calculator-calculation-title, .calculation-infobox .calculator-DrugDosageCalculation .calculator-calculation-dose-info {
+    display: none;
+}
+.calculation-infobox .calculator-DrugDosageCalculation .calculator-calculation-dosage {
+    flex-direction: column-reverse;
+}
+.calculation-infobox .calculator-DrugDosageCalculation .calculator-calculation-dose, .calculation-infobox .calculator-DrugDosageCalculation .calculator-calculation-options {
+    max-width: 100%;
+}
+.calculation-infobox .calculator-DrugDosageCalculation .calculator-inputGroup, .calculation-infobox .calculator-DrugDosageCalculation .calculator-calculation-options {
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
 }

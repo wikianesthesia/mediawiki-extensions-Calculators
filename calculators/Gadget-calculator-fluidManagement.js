@@ -7,6 +7,14 @@
 
                 return units;
             }
+        },
+        mEqperL: {
+            toString: function( units ) {
+                units = units.replace( 'mEqperL', 'mEq/L' );
+                units = units.replace( /mmolperL[\w]*/, 'mmol/L' );
+
+                return units;
+            }
         }
     } );
 
@@ -18,6 +26,13 @@
             baseName: 'hgb',
             prefixes: 'short',
             definition: '3 pcthct'
+        },
+        mEqperL: {
+            baseName: 'mEqperL'
+        },
+        mmolperLUnivalent: {
+            baseName: 'mEqperL',
+            definition: '1 mEqperL'
         }
     } );
 
@@ -69,6 +84,32 @@
             maxLength: 2,
             units: [
                 'hr'
+            ]
+        },
+        serumSodium: {
+            name: 'Current serum sodium',
+            type: 'number',
+            abbreviation: 'Current Na<sup>+</sup>',
+            minValue: '100 mEqperL',
+            maxValue: '170 mEqperL',
+            defaultValue: '140 mEqperL',
+            maxLength: 3,
+            units: [
+                'mEqperL',
+                'mmolperLUnivalent'
+            ]
+        },
+        serumSodiumGoal: {
+            name: 'Goal serum sodium',
+            type: 'number',
+            abbreviation: 'Goal Na<sup>+</sup>',
+            minValue: '100 mEqperL',
+            maxValue: '170 mEqperL',
+            defaultValue: '140 mEqperL',
+            maxLength: 3,
+            units: [
+                'mEqperL',
+                'mmolperLUnivalent'
             ]
         },
         surgicalTrauma: {
@@ -272,6 +313,52 @@
                 }
 
                 return minUop;
+            }
+        },
+        freeWaterDeficit: {
+            name: 'Free water deficit in hypernatremia',
+            abbreviation: 'Free water deficit',
+            data: {
+                variables: {
+                    required: [ 'weight', 'age', 'gender', 'serumSodium', 'serumSodiumGoal' ]
+                }
+            },
+            digits: 0,
+            units: 'L',
+            formula: '<math>\\text{Free water deficit} = \\text{Total body water}*\\left(\\frac{\\mathrm{Na_{Current}}}{\\mathrm{Na_{Goal}}} - 1\\right)</math>' +
+                '<math>\\text{Total body water} = \\mathrm{weight_{kg}}*\\begin{cases}0.6 & \\text{if child}\\\\0.5 & \\text{if adult female}\\\\0.6 & \\text{if adult male}\\\\0.45 & \\text{if elderly female}\\\\0.5 & \\text{if elderly male}\\end{cases}</math>',
+            references: [
+                'Adrogué HJ, Madias NE. Hypernatremia. N Engl J Med. 2000 May 18;342(20):1493-9. doi: 10.1056/NEJM200005183422006. PMID: 10816188.'
+            ],
+            calculate: function( data ) {
+                var weight = data.weight.toNumber( 'kgwt' );
+                var age = data.age.toNumber( 'yo' );
+                var gender = data.gender;
+                var serumSodium = data.serumSodium.toNumber( 'mEqperL' );
+                var serumSodiumGoal = data.serumSodiumGoal.toNumber( 'mEqperL' );
+
+                var totalBodyWater, waterFraction, freeWaterDeficit;
+
+                if( age < 18 ) {
+                    waterFraction = 0.6;
+                } else if( age < 65 ) {
+                    if( gender === 'F' ) {
+                        waterFraction = 0.5;
+                    } else {
+                        waterFraction = 0.6;
+                    }
+                } else {
+                    if( gender === 'F' ) {
+                        waterFraction = 0.45;
+                    } else {
+                        waterFraction = 0.5;
+                    }
+                }
+
+                totalBodyWater = waterFraction * weight;
+                freeWaterDeficit = totalBodyWater * ( serumSodium / serumSodiumGoal - 1 );
+
+                return freeWaterDeficit;
             }
         }
     } );
