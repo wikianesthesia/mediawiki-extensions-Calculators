@@ -523,6 +523,7 @@
         {
             id: 'adenosine',
             name: 'Adenosine',
+            color: 'cardiovascularAntagonist',
             description: 'Administer as a rapid push via central line or most proximal peripheral IV available',
             dosages: [
                 {

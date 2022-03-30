@@ -63,20 +63,36 @@
         padding-top: 1rem;
     }
 }
-.calculation-infobox .calculator-DrugDosageCalculation .calculator-calculation {
+.calculation-infobox .calculator-calculation {
     margin: 0;
 }
-.calculation-infobox .calculator-DrugDosageCalculation .calculator-calculation-title, .calculation-infobox .calculator-DrugDosageCalculation .calculator-calculation-dose-info {
+.calculation-infobox .calculator-calculation-title {
     display: none;
 }
-.calculation-infobox .calculator-DrugDosageCalculation .calculator-calculation-dosage {
-    flex-direction: column-reverse;
-}
-.calculation-infobox .calculator-DrugDosageCalculation .calculator-calculation-dose, .calculation-infobox .calculator-DrugDosageCalculation .calculator-calculation-options {
-    max-width: 100%;
-}
-.calculation-infobox .calculator-DrugDosageCalculation .calculator-inputGroup, .calculation-infobox .calculator-DrugDosageCalculation .calculator-calculation-options {
+.calculation-infobox .calculator-inputGroup {
     border-bottom: 1px solid rgba(0,0,0,0.15);
     margin-bottom: 0.5rem;
     padding-bottom: 0.5rem;
+}
+.calculation-infobox #calculator-input-gender {
+    width: 115%;
+}
+.calculation-infobox .calculator-calculation-dose, .calculation-infobox .calculator-calculation-options {
+    max-width: 100%;
+}
+.calculation-infobox .calculator-calculation-options {
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+    margin-bottom: 0.5rem;
+}
+.calculation-infobox .calculator-calculation-dose-info {
+    border-bottom: 0;
+    text-align: center;
+}
+.calculation-infobox .calculator-calculation-dosage {
+    flex-direction: column-reverse;
+    padding: 0.2rem 0.6rem 0.5rem 0.6rem;
+}
+.calculation-infobox .calculator-calculation-info {
+    border-top: 0 !important;
+    padding: 0.2rem 0.6rem;
 }

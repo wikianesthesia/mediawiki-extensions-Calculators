@@ -78,26 +78,46 @@
     }
 }
 
-.calculation-infobox .calculator-DrugDosageCalculation {
+.calculation-infobox {
     .calculator-calculation {
         margin: 0;
     }
 
-    .calculator-calculation-title, .calculator-calculation-dose-info {
+    .calculator-calculation-title {
         display: none;
     }
 
-    .calculator-calculation-dosage {
-        flex-direction: column-reverse;
+    .calculator-inputGroup {
+        border-bottom: 1px solid rgba(0,0,0,0.15);
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    #calculator-input-gender {
+        width: 115%;
     }
 
     .calculator-calculation-dose, .calculator-calculation-options {
         max-width: 100%;
     }
 
-    .calculator-inputGroup, .calculator-calculation-options {
+    .calculator-calculation-options {
         border-bottom: 1px solid rgba(0,0,0,0.15);
         margin-bottom: 0.5rem;
-        padding-bottom: 0.5rem;
+    }
+
+    .calculator-calculation-dose-info {
+        border-bottom: 0;
+        text-align: center;
+    }
+
+    .calculator-calculation-dosage {
+        flex-direction: column-reverse;
+        padding: 0.2rem 0.6rem 0.5rem 0.6rem;
+    }
+
+    .calculator-calculation-info {
+        border-top: 0 !important;
+        padding: 0.2rem 0.6rem;
     }
 }
